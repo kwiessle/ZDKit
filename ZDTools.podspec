@@ -1,8 +1,8 @@
 Pod::Spec.new do |s|
 
 # 1
-s.platform = :ios
-s.ios.deployment_target = '12.0'
+s.platform = :ios, '10.0'
+s.ios.deployment_target = '10.0'
 s.name = "ZDTools"
 s.summary = "Personal Pod but feel free to use it :)"
 s.requires_arc = true
@@ -17,10 +17,10 @@ s.license = { :type => "MIT", :file => "LICENSE" }
 s.author = { "Kiefer Wiessler" => "kwiessle@student.42.fr" }
 
 # 5 - Replace this URL with your own GitHub page's URL (from the address bar)
-# s.homepage = "https://github.com/TheCodedSelf/RWPickFlavor"
+ s.homepage = "https://github.com/kwiessle/ZDTools"
 
 # 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "https://github.com/TheCodedSelf/RWPickFlavor.git",
+s.source = { :git => "https://github.com/kwiessle/ZDTools.git",
  :tag => "#{s.version}" }
 
 # 7
@@ -31,7 +31,7 @@ s.framework = "UIKit"
 s.source_files = "ZDTools/**/*.{swift}"
 
 # 9
-# s.resources = "RWPickFlavor/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+# s.resources = "ZDTools/*"
 
 # 10
 s.swift_version = "4.2"
