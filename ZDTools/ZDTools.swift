@@ -8,9 +8,8 @@
 
 import Foundation
 
-final class ZDTools {
-    
-    static let request = Request()
-    static let storage = Storage()
+open class ZD {
+
+    static public let request = Request()
     
 }

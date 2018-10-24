@@ -1,39 +1,19 @@
 Pod::Spec.new do |s|
+s.name             = 'ZDTools'
+s.version          = '0.0.1'
+s.summary          = 'ZDCrew Pod, feel free to use it :)'
 
-# 1
-s.platform = :ios, '10.0'
-s.ios.deployment_target = '10.0'
-s.name = "ZDTools"
-s.summary = "Personal Pod but feel free to use it :)"
-s.requires_arc = true
+s.description      = <<-DESC
+This fantastic view changes its color gradually makes your app look fantastic!
+DESC
 
-# 2
-s.version = "0.1.0"
+s.homepage         = 'https://github.com/kwiessle/ZDTools'
+s.license          = { :type => 'MIT', :file => 'LICENSE' }
+s.author           = { 'Kiefer Wiessler' => 'kwiessle@student.fr' }
+s.source           = { :git => 'https://github.com/kwiessle/ZDTools.git', :tag => s.version.to_s }
+s.swift_version    = '4.2'
 
-# 3
-s.license = { :type => "MIT", :file => "LICENSE" }
-
-# 4 - Replace with your name and e-mail address
-s.author = { "Kiefer Wiessler" => "kwiessle@student.42.fr" }
-
-# 5 - Replace this URL with your own GitHub page's URL (from the address bar)
- s.homepage = "https://github.com/kwiessle/ZDTools"
-
-# 6 - Replace this URL with your own Git URL from "Quick Setup"
-s.source = { :git => "https://github.com/kwiessle/ZDTools.git",
- :tag => "#{s.version}" }
-
-# 7
-s.framework = "UIKit"
-
-
-# 8
-s.source_files = "ZDTools/**/*.{swift}"
-
-# 9
-# s.resources = "ZDTools/*"
-
-# 10
-s.swift_version = "4.2"
+s.ios.deployment_target = '12.0'
+s.source_files = 'ZDTools/*.swift'
 
 end

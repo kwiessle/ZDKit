@@ -8,16 +8,16 @@
 
 import UIKit
 
-final class Request {
+final public class Request {
     
-//    static var shared = Request()
-    private let host = "YOUR HOST HERE"
+
     private let cache = NSCache<NSString, UIImage>()
+    public var host = ""
     
     
     // MARK - GET
     
-    func get<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
+    public func get<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
         URLSession.shared.dataTask(with: req) { data, res, err in
             guard err == nil else {
                 DispatchQueue.main.async { completion(nil) }
@@ -43,8 +43,8 @@ final class Request {
     
     // MARK - IMAGE DOWNLOADER
     
-    func imageDownloader(url: String, completion: @escaping(UIImage?) -> Void) {
-        guard let req = URL(string: "\(host)\(url)") else { return }
+    public func imageDownloader(url: String, completion: @escaping(UIImage?) -> Void) {
+        guard let req = URL(string:"\(host)\(url)") else { return }
         let qos = DispatchQoS.background.qosClass
         
         if let cached = cache.object(forKey: NSString(string: url)) { completion(cached); return }
