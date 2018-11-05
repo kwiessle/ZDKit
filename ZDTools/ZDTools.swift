@@ -7,9 +7,19 @@
 //
 
 import Foundation
+import CoreData
 
 open class ZD {
 
-    static public let request = Request()
     
+    static public let storage = Storage()
+    static public let shared = ZD()
+    
+//    public func setRequestHost(url: String) {
+//        ZD.request.host = url
+//    }
+    
+    public func setStorageContext(context: NSManagedObjectContext) {
+        ZD.storage.ctx = context
+    }
 }
