@@ -1,61 +1,17 @@
 //
-//  Request.swift
-//  ZDTools
+//  ZDRequest.swift
+//  ZDKit
 //
-//  Created by Kiefer Wiessler on 24/10/2018.
+//  Created by Kiefer Wiessler on 06/11/2018.
 //  Copyright © 2018 Kiefer Wiessler. All rights reserved.
 //
 
-import UIKit
-
-public enum RequestMethod : String {
-    case POST = "POST"
-    case PUT = "PUT"
-    case GET = "GET"
-    case PATCH = "PATCH"
-    case DELETE = "DELETE"
-}
-
-public enum AuthorizationType : String {
-    case None = ""
-    case Basic = "Basic"
-    case Bearer = "Bearer"
-    case Digest = "Digest"
-    case HOBA = "HOBA"
-    case Mutual = "Mutual"
-    case AWS4 = "AWS4-HMAC-SHA256"
-}
-
-public struct SendableScheme <T : Encodable> {
-    var url  : String
-    var data : T
-    var method : RequestMethod
-    var authType : AuthorizationType = .None
-    var authCredential : String = ""
-    var codingStrategy : JSONEncoder.KeyEncodingStrategy = .useDefaultKeys
-    
-    public init (url: String, method: RequestMethod, data: T) {
-        self.url = url
-        self.method = method
-        self.data = data
-    }
-    
-    public mutating func setAuthorization(type: AuthorizationType, credential: String) {
-        authType = type
-        authCredential = credential
-    }
-}
+import Foundation
 
 public class Request {
     
-
+    
     public init() {}
-    
-    private let cache = NSCache<NSString, UIImage>()
-
-    
-    
-  
     
     public func fetchData<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
         URLSession.shared.dataTask(with: req) { data, res, err in
@@ -80,7 +36,7 @@ public class Request {
             }.resume()
     }
     
-
+    
     
     
     public func prepareAuthorizedRequest(url: String, type: AuthorizationType, credential: String) -> URLRequest? {
@@ -93,13 +49,16 @@ public class Request {
         return request
     }
     
+    
     public func preapareDataRequest<T : Encodable>(scheme: SendableScheme<T>) -> URLRequest?
     {
         guard let url = URL(string: scheme.url) else {
             print("Failed to prepare URL")
             return nil
         }
-        guard let json = try? JSONEncoder().encode(scheme.data) else {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        guard let json = try? encoder.encode(scheme.data) else {
             print("Failed to generate JSON from model : \(String(describing: scheme.data.self))")
             return nil
         }
@@ -129,34 +88,13 @@ public class Request {
                 return
             }
             if let code = res as? HTTPURLResponse {
-                 DispatchQueue.main.async { completion(code.statusCode) }
+                DispatchQueue.main.async { completion(code.statusCode) }
             } else {
-                 completion(nil)
+                completion(nil)
             }
             }.resume()
         
     }
     
-    
-    
-    
-    // MARK - IMAGE DOWNLOADER
-    
-    public func imageDownloader(url: String, completion: @escaping(UIImage?) -> Void) {
-        guard let req = URL(string: url) else { return }
-        let qos = DispatchQoS.background.qosClass
-        
-        if let cached = cache.object(forKey: NSString(string: url)) { completion(cached); return }
-        
-        DispatchQueue.global(qos: qos).async { [unowned self] in
-            guard let data = try? Data(contentsOf: req), let image = UIImage(data: data) else {
-                DispatchQueue.main.async { completion(nil) }
-                print("ZDTools Request : Failed to Build Image from Data")
-                return
-            }
-            self.cache.setObject(image, forKey: NSString(string: url))
-            DispatchQueue.main.async { completion(image) }
-        }
-    }
-    
 }
+

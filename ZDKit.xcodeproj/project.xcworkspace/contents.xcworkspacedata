@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ZDTools.xcodeproj">
+      location = "self:ZDKit.xcodeproj">
    </FileRef>
 </Workspace>

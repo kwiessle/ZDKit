@@ -7,23 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB9B40262180F2930063A22D /* ZDTools.h in Headers */ = {isa = PBXBuildFile; fileRef = FB9B40242180F2930063A22D /* ZDTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FB9B402D2180F4A40063A22D /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B402C2180F4A40063A22D /* Request.swift */; };
-		FB9B402F2180F5D10063A22D /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B402E2180F5D10063A22D /* Storage.swift */; };
-		FB9B40312180F7F10063A22D /* ZDTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB9B40302180F7F10063A22D /* ZDTools.swift */; };
+		FB8AA3EF2191E4E2007A5A73 /* ZDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */; };
+		FB8AA3F82191E52F007A5A73 /* SendableScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FB9B40212180F2930063A22D /* ZDTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZDTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FB9B40242180F2930063A22D /* ZDTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDTools.h; sourceTree = "<group>"; };
-		FB9B40252180F2930063A22D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB9B402C2180F4A40063A22D /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
-		FB9B402E2180F5D10063A22D /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
-		FB9B40302180F7F10063A22D /* ZDTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDTools.swift; sourceTree = "<group>"; };
+		FB8AA3EA2191E4E2007A5A73 /* ZDKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZDKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDKit.h; sourceTree = "<group>"; };
+		FB8AA3EE2191E4E2007A5A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDRequest.swift; sourceTree = "<group>"; };
+		FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableScheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FB9B401E2180F2930063A22D /* Frameworks */ = {
+		FB8AA3E72191E4E2007A5A73 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,100 +31,99 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FB9B40172180F2930063A22D = {
+		FB8AA3E02191E4E2007A5A73 = {
 			isa = PBXGroup;
 			children = (
-				FB9B40232180F2930063A22D /* ZDTools */,
-				FB9B40222180F2930063A22D /* Products */,
+				FB8AA3EC2191E4E2007A5A73 /* ZDKit */,
+				FB8AA3EB2191E4E2007A5A73 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FB9B40222180F2930063A22D /* Products */ = {
+		FB8AA3EB2191E4E2007A5A73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FB9B40212180F2930063A22D /* ZDTools.framework */,
+				FB8AA3EA2191E4E2007A5A73 /* ZDKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FB9B40232180F2930063A22D /* ZDTools */ = {
+		FB8AA3EC2191E4E2007A5A73 /* ZDKit */ = {
 			isa = PBXGroup;
 			children = (
-				FB9B40242180F2930063A22D /* ZDTools.h */,
-				FB9B40252180F2930063A22D /* Info.plist */,
-				FB9B402C2180F4A40063A22D /* Request.swift */,
-				FB9B402E2180F5D10063A22D /* Storage.swift */,
-				FB9B40302180F7F10063A22D /* ZDTools.swift */,
+				FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */,
+				FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */,
+				FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */,
+				FB8AA3EE2191E4E2007A5A73 /* Info.plist */,
 			);
-			path = ZDTools;
+			path = ZDKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		FB9B401C2180F2930063A22D /* Headers */ = {
+		FB8AA3E52191E4E2007A5A73 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB9B40262180F2930063A22D /* ZDTools.h in Headers */,
+				FB8AA3EF2191E4E2007A5A73 /* ZDKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		FB9B40202180F2930063A22D /* ZDTools */ = {
+		FB8AA3E92191E4E2007A5A73 /* ZDKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FB9B40292180F2930063A22D /* Build configuration list for PBXNativeTarget "ZDTools" */;
+			buildConfigurationList = FB8AA3F22191E4E2007A5A73 /* Build configuration list for PBXNativeTarget "ZDKit" */;
 			buildPhases = (
-				FB9B401C2180F2930063A22D /* Headers */,
-				FB9B401D2180F2930063A22D /* Sources */,
-				FB9B401E2180F2930063A22D /* Frameworks */,
-				FB9B401F2180F2930063A22D /* Resources */,
+				FB8AA3E52191E4E2007A5A73 /* Headers */,
+				FB8AA3E62191E4E2007A5A73 /* Sources */,
+				FB8AA3E72191E4E2007A5A73 /* Frameworks */,
+				FB8AA3E82191E4E2007A5A73 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ZDTools;
-			productName = ZDTools;
-			productReference = FB9B40212180F2930063A22D /* ZDTools.framework */;
+			name = ZDKit;
+			productName = ZDKit;
+			productReference = FB8AA3EA2191E4E2007A5A73 /* ZDKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FB9B40182180F2930063A22D /* Project object */ = {
+		FB8AA3E12191E4E2007A5A73 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Kiefer Wiessler";
 				TargetAttributes = {
-					FB9B40202180F2930063A22D = {
-						CreatedOnToolsVersion = 10.0;
-						LastSwiftMigration = 1000;
+					FB8AA3E92191E4E2007A5A73 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 				};
 			};
-			buildConfigurationList = FB9B401B2180F2930063A22D /* Build configuration list for PBXProject "ZDTools" */;
+			buildConfigurationList = FB8AA3E42191E4E2007A5A73 /* Build configuration list for PBXProject "ZDKit" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = FB9B40172180F2930063A22D;
-			productRefGroup = FB9B40222180F2930063A22D /* Products */;
+			mainGroup = FB8AA3E02191E4E2007A5A73;
+			productRefGroup = FB8AA3EB2191E4E2007A5A73 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FB9B40202180F2930063A22D /* ZDTools */,
+				FB8AA3E92191E4E2007A5A73 /* ZDKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		FB9B401F2180F2930063A22D /* Resources */ = {
+		FB8AA3E82191E4E2007A5A73 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -136,20 +133,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FB9B401D2180F2930063A22D /* Sources */ = {
+		FB8AA3E62191E4E2007A5A73 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB9B40312180F7F10063A22D /* ZDTools.swift in Sources */,
-				FB9B402D2180F4A40063A22D /* Request.swift in Sources */,
-				FB9B402F2180F5D10063A22D /* Storage.swift in Sources */,
+				FB8AA3F82191E52F007A5A73 /* SendableScheme.swift in Sources */,
+				FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FB9B40272180F2930063A22D /* Debug */ = {
+		FB8AA3F02191E4E2007A5A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -201,7 +197,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -213,7 +209,7 @@
 			};
 			name = Debug;
 		};
-		FB9B40282180F2930063A22D /* Release */ = {
+		FB8AA3F12191E4E2007A5A73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -259,7 +255,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -271,7 +267,7 @@
 			};
 			name = Release;
 		};
-		FB9B402A2180F2930063A22D /* Debug */ = {
+		FB8AA3F32191E4E2007A5A73 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -281,14 +277,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ZDTools/Info.plist;
+				INFOPLIST_FILE = ZDKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kwiessle.ZDTools;
+				PRODUCT_BUNDLE_IDENTIFIER = kwiessle.ZDKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -297,7 +293,7 @@
 			};
 			name = Debug;
 		};
-		FB9B402B2180F2930063A22D /* Release */ = {
+		FB8AA3F42191E4E2007A5A73 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -307,14 +303,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ZDTools/Info.plist;
+				INFOPLIST_FILE = ZDKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kwiessle.ZDTools;
+				PRODUCT_BUNDLE_IDENTIFIER = kwiessle.ZDKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
@@ -325,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FB9B401B2180F2930063A22D /* Build configuration list for PBXProject "ZDTools" */ = {
+		FB8AA3E42191E4E2007A5A73 /* Build configuration list for PBXProject "ZDKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB9B40272180F2930063A22D /* Debug */,
-				FB9B40282180F2930063A22D /* Release */,
+				FB8AA3F02191E4E2007A5A73 /* Debug */,
+				FB8AA3F12191E4E2007A5A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FB9B40292180F2930063A22D /* Build configuration list for PBXNativeTarget "ZDTools" */ = {
+		FB8AA3F22191E4E2007A5A73 /* Build configuration list for PBXNativeTarget "ZDKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FB9B402A2180F2930063A22D /* Debug */,
-				FB9B402B2180F2930063A22D /* Release */,
+				FB8AA3F32191E4E2007A5A73 /* Debug */,
+				FB8AA3F42191E4E2007A5A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FB9B40182180F2930063A22D /* Project object */;
+	rootObject = FB8AA3E12191E4E2007A5A73 /* Project object */;
 }
