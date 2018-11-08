@@ -17,7 +17,6 @@ public enum RequestMethod : String {
 }
 
 public enum AuthorizationType : String {
-    case None = ""
     case Basic = "Basic"
     case Bearer = "Bearer"
     case Digest = "Digest"
@@ -26,21 +25,28 @@ public enum AuthorizationType : String {
     case AWS4 = "AWS4-HMAC-SHA256"
 }
 
-public struct SendableScheme <T : Encodable> {
-    var url  : String
-    var data : T
-    var method : RequestMethod
-    var authType : AuthorizationType = .None
-    var authCredential = String()
+public struct ZDAuth <T> {
+    public let uid : String
+    public let secret : String
+    public var credential : T?
     
-    public init (url: String, method: RequestMethod, data: T) {
-        self.url = url
-        self.method = method
-        self.data = data
+    public init (uid: String, secret: String) {
+        self.uid = uid
+        self.secret = secret
     }
     
-    public mutating func setAuthorization(type: AuthorizationType, credential: String) {
-        authType = type
-        authCredential = credential
+    public mutating func set(credential: T) {
+        self.credential = credential
+    }
+    
+}
+
+public struct URLQuery {
+    public let name : String
+    public let value : String
+    
+    public init(_ name: String, value: String) {
+        self.name = name
+        self.value = value
     }
 }

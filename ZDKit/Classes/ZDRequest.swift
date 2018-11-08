@@ -8,87 +8,78 @@
 
 import Foundation
 
-public class Request {
+public class ZDRequest {
     
     
     public init() {}
     
-    public func fetchData<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
-        URLSession.shared.dataTask(with: req) { data, res, err in
+    
+    
+    public func connect<T: Decodable>(req: URLRequest, for type: T.Type) -> T? {
+        let (body, _, err) = URLSession.shared.synchronousDataTask(with: req)
+        guard err == nil else {
+            print("ZDRequest : \(String(describing: err))")
+            return nil
+        }
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let data = body else {
+            print("ZDRequest : Data Not Recieved")
+            return nil
+        }
+        guard let JSON = try? decoder.decode(T.self, from: data) else {
+            print("ZDRequest : Fetching From Data to Model failed")
+            return nil
+        }
+        return JSON
+    }
+    
+    public func fetch<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
+        URLSession.shared.dataTask(with: req) { body, res, err in
             guard err == nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDTools Request : \(String(describing: err))")
+                print("ZDRequest : \(String(describing: err))")
                 return
             }
-            guard let getData = data else {
+            guard let data = body else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDTools Request : Data Not Recieved")
+                print("ZDRequest : Data Not Recieved")
                 return
             }
+//            print(res.debugDescription)
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let JSONData = try? decoder.decode(T.self, from: getData) else {
+            guard let JSON = try? decoder.decode(T.self, from: data) else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDTools Request : Fetching From Data to Model failed")
+                print("ZDRequest : Fetching From Data to Model failed")
                 return
             }
-            DispatchQueue.main.async { completion(JSONData) }
+            DispatchQueue.main.async { completion(JSON) }
             }.resume()
     }
     
     
     
-    
-    public func prepareAuthorizedRequest(url: String, type: AuthorizationType, credential: String) -> URLRequest? {
-        guard let url = URL(string: url) else {
-            print("Failed to prepare URL")
-            return nil
-        }
-        var request = URLRequest(url: url)
-        request.addValue("\(type) \(credential)", forHTTPHeaderField: "Authorization")
-        return request
-    }
-    
-    
-    public func preapareDataRequest<T : Encodable>(scheme: SendableScheme<T>) -> URLRequest?
-    {
-        guard let url = URL(string: scheme.url) else {
-            print("Failed to prepare URL")
-            return nil
-        }
-        let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        guard let json = try? encoder.encode(scheme.data) else {
-            print("Failed to generate JSON from model : \(String(describing: scheme.data.self))")
-            return nil
-        }
-        var request = URLRequest(url: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = scheme.method.rawValue
-        request.httpBody = json
-        if scheme.authType != .None {
-            request.addValue("\(scheme.authType) \(scheme.authCredential)", forHTTPHeaderField: "Authorization")
-        }
-        return request
-    }
+
     
     
     
     
-    public func sendData(req: URLRequest, completion: @escaping(Int?) -> Void) {
-        URLSession.shared.dataTask(with: req) { data, res, err in
+    public func send(req: URLRequest, completion: @escaping(HTTPURLResponse?) -> Void) {
+        URLSession.shared.dataTask(with: req) { body, res, err in
             guard err == nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("POST error"); return
+                print("ZDRequest : \(String(describing: err))")
+                return
                 
             }
             guard res != nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("POST res");
+                print("ZDRequest : Request reponse is Empty");
                 return
             }
-            if let code = res as? HTTPURLResponse {
-                DispatchQueue.main.async { completion(code.statusCode) }
+            if let response = res as? HTTPURLResponse {
+                DispatchQueue.main.async { completion(response) }
             } else {
                 completion(nil)
             }

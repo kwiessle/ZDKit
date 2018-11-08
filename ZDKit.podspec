@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'ZDKit'
-s.version          = '1.0.0'
+s.version          = '1.0.1'
 s.summary          = 'ZDCrew Pod, feel free to use it :)'
 
 s.description      = <<-DESC
@@ -14,6 +14,6 @@ s.source           = { :git => 'https://github.com/kwiessle/ZDKit.git', :tag => 
 s.swift_version    = '4.2'
 
 s.ios.deployment_target = '12.0'
-s.source_files = 'ZDKit/**/*'
+s.source_files = 'ZDKit/**/*.{h,m,swift}'
 
 end

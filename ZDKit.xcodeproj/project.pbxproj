@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		FB8AA3EF2191E4E2007A5A73 /* ZDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */; };
-		FB8AA3F82191E52F007A5A73 /* SendableScheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */; };
+		FB8AA3F82191E52F007A5A73 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F72191E52F007A5A73 /* Models.swift */; };
+		FBFC371421945E8F00BBAF48 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */; };
+		FBFC37162194970C00BBAF48 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */; };
+		FBFC37192194A35000BBAF48 /* ZDConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC37182194A35000BBAF48 /* ZDConnect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,7 +20,10 @@
 		FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDKit.h; sourceTree = "<group>"; };
 		FB8AA3EE2191E4E2007A5A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDRequest.swift; sourceTree = "<group>"; };
-		FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendableScheme.swift; sourceTree = "<group>"; };
+		FB8AA3F72191E52F007A5A73 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
+		FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
+		FBFC37182194A35000BBAF48 /* ZDConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDConnect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB7831C32191F72A0074326F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */,
+				FB8AA3F72191E52F007A5A73 /* Models.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		FB8AA3E02191E4E2007A5A73 = {
 			isa = PBXGroup;
 			children = (
@@ -51,11 +66,29 @@
 			isa = PBXGroup;
 			children = (
 				FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */,
-				FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */,
-				FB8AA3F72191E52F007A5A73 /* SendableScheme.swift */,
+				FBFC371221945E6800BBAF48 /* Extensions */,
+				FB7831C32191F72A0074326F /* Classes */,
 				FB8AA3EE2191E4E2007A5A73 /* Info.plist */,
+				FBFC37172194A33600BBAF48 /* Protocols */,
 			);
 			path = ZDKit;
+			sourceTree = "<group>";
+		};
+		FBFC371221945E6800BBAF48 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */,
+				FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FBFC37172194A33600BBAF48 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				FBFC37182194A35000BBAF48 /* ZDConnect.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +170,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB8AA3F82191E52F007A5A73 /* SendableScheme.swift in Sources */,
+				FBFC37162194970C00BBAF48 /* URLSession+Extension.swift in Sources */,
+				FBFC37192194A35000BBAF48 /* ZDConnect.swift in Sources */,
+				FB8AA3F82191E52F007A5A73 /* Models.swift in Sources */,
+				FBFC371421945E8F00BBAF48 /* URLRequest+Extension.swift in Sources */,
 				FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
