@@ -8,60 +8,46 @@
 
 import Foundation
 
-public class ZDRequest {
+public class ZDRequest : ZDError {
     
     
-    public init() {}
+    public init() {
+        super.init(context: "ZDRequest")
+    }
     
     
     
     public func connect<T: Decodable>(req: URLRequest, for type: T.Type) -> T? {
-        let (body, _, err) = URLSession.shared.synchronousDataTask(with: req)
+        let (body, _, err) = URLSession.shared.syncDataTask(with: req)
         guard err == nil else {
-            print("ZDRequest : \(String(describing: err))")
+            ZDThrowError(scope: "connect", message: String(describing: err))
             return nil
         }
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
         guard let data = body else {
-            print("ZDRequest : Data Not Recieved")
+            ZDThrowError(scope: "connect", message: "Data Not Recieved")
             return nil
         }
-        guard let JSON = try? decoder.decode(T.self, from: data) else {
-            print("ZDRequest : Fetching From Data to Model failed")
-            return nil
-        }
-        return JSON
+        return JSONParser(for: T.self, from: data, scope: "connect")
     }
+
+
+    
     
     public func fetch<T: Decodable>(req: URLRequest, for type: T.Type, completion: @escaping(T?) -> Void) {
-        URLSession.shared.dataTask(with: req) { body, res, err in
+        URLSession.shared.dataTask(with: req) { body, _, err in
             guard err == nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDRequest : \(String(describing: err))")
+                self.ZDThrowError(scope: "fetch", message: String(describing: err))
                 return
             }
             guard let data = body else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDRequest : Data Not Recieved")
+                self.ZDThrowError(scope: "fetch", message: "Data Not Recieved")
                 return
             }
-//            print(res.debugDescription)
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            guard let JSON = try? decoder.decode(T.self, from: data) else {
-                DispatchQueue.main.async { completion(nil) }
-                print("ZDRequest : Fetching From Data to Model failed")
-                return
-            }
-            DispatchQueue.main.async { completion(JSON) }
+            DispatchQueue.main.async { completion(self.JSONParser(for: T.self, from: data, scope: "fetch")) }
             }.resume()
     }
-    
-    
-    
-
-    
     
     
     
@@ -69,13 +55,13 @@ public class ZDRequest {
         URLSession.shared.dataTask(with: req) { body, res, err in
             guard err == nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDRequest : \(String(describing: err))")
+                self.ZDThrowError(scope: "send", message: String(describing: err))
                 return
                 
             }
             guard res != nil else {
                 DispatchQueue.main.async { completion(nil) }
-                print("ZDRequest : Request reponse is Empty");
+                self.ZDThrowError(scope: "send", message: "HTTP reponse is Empty")
                 return
             }
             if let response = res as? HTTPURLResponse {
@@ -84,8 +70,21 @@ public class ZDRequest {
                 completion(nil)
             }
             }.resume()
-        
     }
+    
+    
+    
+    internal func JSONParser<T: Decodable>(for type: T.Type, from data: Data, scope: String) -> T? {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        guard let JSON = try? decoder.decode(T.self, from: data) else {
+            ZDThrowError(scope: scope, message: "Fetching From Data to Model failed")
+            return nil
+        }
+        return JSON
+    }
+    
+    
     
 }
 

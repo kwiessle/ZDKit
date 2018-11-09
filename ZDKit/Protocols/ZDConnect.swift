@@ -9,7 +9,10 @@
 import Foundation
 
 public protocol ZDConnect {
+    
     associatedtype T
+    
     var auth : ZDAuth<T> { get set }
     func connect() -> Bool
+    
 }

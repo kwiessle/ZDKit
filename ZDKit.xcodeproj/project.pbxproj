@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		FB8AA3EF2191E4E2007A5A73 /* ZDKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */; };
-		FB8AA3F82191E52F007A5A73 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB8AA3F72191E52F007A5A73 /* Models.swift */; };
+		FBBD5FD02195FC6600A372C6 /* ZDAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FCF2195FC6600A372C6 /* ZDAuth.swift */; };
+		FBBD5FD22195FCCF00A372C6 /* AuthorizationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FD12195FCCF00A372C6 /* AuthorizationType.swift */; };
+		FBBD5FD42195FCF300A372C6 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FD32195FCF300A372C6 /* RequestMethod.swift */; };
+		FBBD5FD62195FD3200A372C6 /* [HTTPQuery]+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FD52195FD3200A372C6 /* [HTTPQuery]+Extension.swift */; };
+		FBBD5FD82195FD4A00A372C6 /* HTTPQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FD72195FD4A00A372C6 /* HTTPQuery.swift */; };
+		FBBD5FDA2195FDE800A372C6 /* ZDError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBBD5FD92195FDE800A372C6 /* ZDError.swift */; };
 		FBFC371421945E8F00BBAF48 /* URLRequest+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */; };
 		FBFC37162194970C00BBAF48 /* URLSession+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */; };
 		FBFC37192194A35000BBAF48 /* ZDConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFC37182194A35000BBAF48 /* ZDConnect.swift */; };
@@ -20,7 +25,12 @@
 		FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZDKit.h; sourceTree = "<group>"; };
 		FB8AA3EE2191E4E2007A5A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDRequest.swift; sourceTree = "<group>"; };
-		FB8AA3F72191E52F007A5A73 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		FBBD5FCF2195FC6600A372C6 /* ZDAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDAuth.swift; sourceTree = "<group>"; };
+		FBBD5FD12195FCCF00A372C6 /* AuthorizationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationType.swift; sourceTree = "<group>"; };
+		FBBD5FD32195FCF300A372C6 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		FBBD5FD52195FD3200A372C6 /* [HTTPQuery]+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "[HTTPQuery]+Extension.swift"; sourceTree = "<group>"; };
+		FBBD5FD72195FD4A00A372C6 /* HTTPQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPQuery.swift; sourceTree = "<group>"; };
+		FBBD5FD92195FDE800A372C6 /* ZDError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDError.swift; sourceTree = "<group>"; };
 		FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+Extension.swift"; sourceTree = "<group>"; };
 		FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extension.swift"; sourceTree = "<group>"; };
 		FBFC37182194A35000BBAF48 /* ZDConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZDConnect.swift; sourceTree = "<group>"; };
@@ -41,7 +51,7 @@
 			isa = PBXGroup;
 			children = (
 				FB8AA3F52191E50A007A5A73 /* ZDRequest.swift */,
-				FB8AA3F72191E52F007A5A73 /* Models.swift */,
+				FBBD5FD92195FDE800A372C6 /* ZDError.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -66,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				FB8AA3ED2191E4E2007A5A73 /* ZDKit.h */,
+				FBBD5FCE2195FC4F00A372C6 /* Types */,
 				FBFC371221945E6800BBAF48 /* Extensions */,
 				FB7831C32191F72A0074326F /* Classes */,
 				FB8AA3EE2191E4E2007A5A73 /* Info.plist */,
@@ -74,11 +85,23 @@
 			path = ZDKit;
 			sourceTree = "<group>";
 		};
+		FBBD5FCE2195FC4F00A372C6 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				FBBD5FCF2195FC6600A372C6 /* ZDAuth.swift */,
+				FBBD5FD12195FCCF00A372C6 /* AuthorizationType.swift */,
+				FBBD5FD32195FCF300A372C6 /* RequestMethod.swift */,
+				FBBD5FD72195FD4A00A372C6 /* HTTPQuery.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
 		FBFC371221945E6800BBAF48 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				FBFC371321945E8F00BBAF48 /* URLRequest+Extension.swift */,
 				FBFC37152194970C00BBAF48 /* URLSession+Extension.swift */,
+				FBBD5FD52195FD3200A372C6 /* [HTTPQuery]+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -170,10 +193,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBBD5FD42195FCF300A372C6 /* RequestMethod.swift in Sources */,
+				FBBD5FD62195FD3200A372C6 /* [HTTPQuery]+Extension.swift in Sources */,
 				FBFC37162194970C00BBAF48 /* URLSession+Extension.swift in Sources */,
+				FBBD5FD02195FC6600A372C6 /* ZDAuth.swift in Sources */,
+				FBBD5FD82195FD4A00A372C6 /* HTTPQuery.swift in Sources */,
+				FBBD5FD22195FCCF00A372C6 /* AuthorizationType.swift in Sources */,
 				FBFC37192194A35000BBAF48 /* ZDConnect.swift in Sources */,
-				FB8AA3F82191E52F007A5A73 /* Models.swift in Sources */,
 				FBFC371421945E8F00BBAF48 /* URLRequest+Extension.swift in Sources */,
+				FBBD5FDA2195FDE800A372C6 /* ZDError.swift in Sources */,
 				FB8AA3F62191E50A007A5A73 /* ZDRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
