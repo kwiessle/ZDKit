@@ -1,11 +1,10 @@
 Pod::Spec.new do |s|
 s.name             = 'ZDKit'
 s.version          = '1.0.1'
-s.summary          = 'ZDKit is a framework wich simplify the queries between your API and your Swift Application. Sending & Fetching JSON has never been so easy'
+s.summary          = 'ZDKit'
 
-s.description      = <<-DESC
-This fantastic view changes its color gradually makes your app look fantastic!
-DESC
+s.description      = 'ZDKit is a framework wich simplify the queries between your API and your Swift Application. Sending & Fetching JSON has never been so easy'
+
 
 s.homepage         = 'https://www.kieferwiessler.com/zdkit'
 s.license          = { :type => 'MIT', :file => 'LICENSE' }
